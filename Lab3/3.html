@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div style="margin-left: 200px;">
+				<h1>Веб-технологии, ПИ-320, Фёдорова Влада, ЛР 3, задание 1</h1>
+				<h2>Новости:</h2>
+					<h3>В Башкирии боялись, что Фольклориада вызовет взрыв заболеваемости COVID-19. Как вышло на самом деле?</h3>
+					<p>Изучаем графики и сравниваем цифры официальной статистики. </p><a href="https://ufa1.ru/text/health/2021/08/13/70074842/">Подробнее...</a><br>
+					<img src="https://static.ngs.ru/news/2021/99/preview/c0e637cacbed7e6039c0593dfe53238411b94af00_1127_751_c.jpg.webp-portal" alt="" width="400px">
+					<br>
+					<h3>«Бьемся уже два года»: в элитном районе Уфы жители воюют за детскую площадку с новой школой</h3>
+					<p>Учреждение хочет оградиться забором, но местные ВИПы считают, что тогда их детям будет негде играть </p><a href="https://ufa1.ru/text/realty/2021/08/13/70076318/">Подробнее...</a><br>
+					<img src="https://static.ngs.ru/news/2021/99/preview/392a4111b5617afcda224efd67e37b2b11f657ebc_1280_853_c.jpg.webp-portal" alt="" width="400px">
+					<br>
+					<h3>«Понимаете, в кого я такая»: телеведущая Ляйсан Утяшева рассказала о своем дедушке из Башкирии</h3>
+					<p>В селе Раевка, куда приезжала знаменитость, проживает ее родня </p><a href="https://ufa1.ru/text/family/2021/08/12/70075673/">Подробнее...</a><br>
+					<img src="https://static.ngs.ru/news/2021/99/preview/e8cdeebdada47f8ee9c898113197b2a5096cc79e_1280_853_c.jpg.webp-portal" alt="" width="400px">
+					<br>
+					<span id = "span"></span>
+					<form>
+						<input onclick="fun(this.value)" type="button" value="загрузить ещё">
+					</form>
+					<script>
+						let tek = 5;
+						function fun(str) {
+							if (str.length==0) {
+								document.getElementById("span").innerHTML="";
+								return;
+								  }
+							  if (window.XMLHttpRequest) {
+								xmlhttp=new XMLHttpRequest();
+								 } else { 
+									xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+										  }
+								  xmlhttp.onreadystatechange=function() {
+							if (this.readyState==4 && this.status==200) {
+								  document.getElementById("span").innerHTML=this.responseText;
+								}
+							  }
+							xmlhttp.open("GET","1.php?tek="+tek,true);
+							   xmlhttp.send();
+							   tek+=5;
+							}
+					 </script>
+					 </div>
+			</body>
+	</html> 
