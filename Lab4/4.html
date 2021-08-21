@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+	<script src="jquery-ui.js"></script>
+	</head>
+	<body>
+		<div style="margin-left: 200px;">
+				<h1>Веб-технологии, ПИ-320, Фёдорова Влада, ЛР 4, Вариант 7</h1>
+				<div style="background-color: thistle; padding: 50px;">
+					<h2>Выберете персонажа для игры    <img src="https://i.gifer.com/PYF.gif" alt="" width="100px"></h2>
+					<span id="accordion" >
+						<h2>Кен</h2> <div style="height: 600px;">
+						  <p><span style="font-weight: 700;">Кен</span><br><br>				
+							Кен – партнёр знаменитой Барби – всегда оставался в её тени, мы почти ничего не знаем о нём. А его жизнь – жизнь  уникальной мужской фэшн-куклы - тоже довольно интересна. <br><br>
+							<b>Интересные факты про Кена:</b><br>
+							1. Оказывается, у куклы Кена есть фамилия - Карсон. <br>
+							2. Кен также как и Барби родом из придуманного Висконсина, штат Уиллоус.<br>
+							3. У Кена, как и у куклы Барби, тоже есть семья. Его отца зовут доктор Карл Карсон, маму – Эдна, а младшего брата – Томми.<br><br>
+							<button class="button1" style="background-color: thistle;">Настроить персонажа</button></p>
+						</div>
+						<h2>Барби</h2> 
+						<div>
+						  <p><span style="font-weight: 700;">Барби</span><br><br>				
+							Наверное, сегодня нет человека, который не знаком с куклой Барби. Еще бы!!! Она проделала долгий путь развития, чтобы стать знаменитой на весь мир. Впервые эта кукла была выпущена компанией Mattel еще 60 лет назад и была представлена 9 марта 1959 года на Американской международной ярмарке игрушек в Нью-Йорке. 
+							<br><br>
+							<b>Интересные факты про Барби:</b><br>
+							1. Настоящее имя Барби - Барбара Миллисент Робертс. <br>
+							2. Говорят, что Барби родилась у супружеской пары по имени Джордж и Маргарет Робертс. Барби - не единственный ребенок. У нее есть 6 братьев и сестер<br>
+							3. У нее есть бойфренд, полное имя которого Кен Карсон. Обычно его называют просто Кен.<br><br>
+							<button class="button2" style="background-color: thistle;">Настроить персонажа</button></p> </p>
+						</div> 
+						</span>
+					
+					
+						<div id="dialog1" title="Настроить персонажа">
+							<h3>Персонаж - Кен</h3>
+							<img src="https://im0-tub-ru.yandex.net/i?id=753cab9b023ec1377acf6ffd50450b0b&n=13" alt="" width="71%"><br><br>
+							<form>
+						 День рождения:  <input type="text"  class="date"><br><br>
+						 Профессия: <input type="text"  class="prof"><br><br>
+						Хобби: <input type="text"  class="hob"><br><br>
+						Трудолюбие персонажа: <p style="display: inline;" id="sliderValue2"></p>
+						<br><br>
+						<div class="slider2" style="width: 100%;"></div> <br>
+							  <label>Запрплата персонажа составит: </label><span id="zp2"></span>!  <span style="font-weight: 900; font-size: large;color: steelblue;" title="Расчет производится в зависимости от трудолюбия">&#63;</span><br><br>
+							</form>
+							<input type="button" class="otpr" value="Сохранить">
+						  </div>
+					
+					
+						  <div id="dialog2" title="Настроить персонажа">
+							<h3>Персонаж - Барби</h3>
+							<img src="https://crocky.ru/upload/iblock/caf/caf7f131fe43f051c3468cb9ff81e7a5.jpg" alt="" width="71%"><br><br>
+							<form>
+							День рождения:  <input type="text"  class="date"><br><br>
+							Профессия: <input type="text"  class="prof"><br><br>
+							 Хобби: <input type="text"  class="hob"><br><br>
+							 Трудолюбие персонажа: <p style="display: inline;" id="sliderValue1"></p>
+							 <br><br>
+							 <div class="slider1" style="width: 100%;"></div> <br>
+								   <label>Запрплата персонажа составит: </label><span id="zp1"></span> !<span style="font-weight: 900; font-size: large;color: steelblue;" title="Расчет производится в зависимости от трудолюбия">&#63;</span><br><br>
+								 </form>
+								 <input type="button" class="otpr" value="Сохранить">
+						  </div>
+					
+					
+						  <div class="dia" title="Данные сохранены">Вы уверены, что хотите добавить персонажа в игру?</div>
+						  <div class="ok" title="Все готово к началу игры">Первонаж добавлен! Начинайте игру!</div>
+					<script type="text/javascript">
+						$(function(){
+							$("#accordion" ).accordion({  collapsible: true });
+							$('#dialog1').dialog({ autoOpen: false, width: 500 });
+							  $('#dialog2').dialog({ autoOpen: false, width: 500 });
+							  $.datepicker.regional['ru'] = {
+						closeText: 'Закрыть',
+						prevText: 'Предыдущий',
+						nextText: 'Следующий',
+						currentText: 'Сегодня',
+						monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+						monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+						dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+						dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+						dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+						weekHeader: 'Не',
+						dateFormat: 'dd.mm.yy',
+						firstDay: 1,
+						isRTL: false,
+						showMonthAfterYear: false,
+						yearSuffix: ''
+					};
+						$.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+							  $(".date").datepicker({ });
+							$(".button1").click(function(){ 
+							$( "#dialog1" ).dialog('open'); 
+						  })
+						  $(".button2").click(function(){ 
+							$( "#dialog2" ).dialog('open'); 
+						  })
+						  var hob = ["Шитье", "Кулинария", "Нет хобби", "Рыбалка", "Рисование", "Фото", "Спорт", "Путешествия", "Музыка", "Пение", "Авто", "Конный спорт", "Техника"]; 
+						  $(".hob" ).click(function(){
+							$(".hob").autocomplete({ source: hob });  
+						}); 
+					  var prof = ["Программист", "Повар", "Врач", "Музыкант", "Экономист", "Механик", "Учитель", "Водитель", "Кондитер", "Воспитатель", "Фотограф", "Ветеринар", "Акробат", "Администратор"]; 
+						  $(".prof" ).click(function(){
+							$(".prof").autocomplete({ source: prof }); 
+						});
+						$('.slider1').slider({
+								min: 0,
+								max: 100,
+							change: function (event, ui){
+								var val = $('.slider1').slider('value');
+								$('#sliderValue1').html(val);
+								var k = $('#sliderValue1').html();
+						if (k<=10){
+						  var zp = 1000*(1+k/10);
+						}
+						if (k>10 && k<50){
+						  var zp = 1200*(1+k/10);
+						}
+						if (k>=50){
+						  var zp = 1250*(1+k/10);
+						}
+						document.getElementById('zp1').innerHTML = Math.floor(zp);
+							}
+						});
+						$('.slider2').slider({
+								min: 0,
+								max: 100,
+							change: function (event, ui){
+								var val = $('.slider2').slider('value');
+								$('#sliderValue2').html(val);
+								var k = $('#sliderValue2').html();
+						if (k<=10){
+						  var zp = 1200*(1+k/10);
+						}
+						if (k>10 && k<50){
+						  var zp = 1400*(1+k/10);
+						}
+						if (k>=50){
+						  var zp = 1550*(1+k/10);
+						}
+						document.getElementById('zp2').innerHTML = Math.floor(zp);
+							}
+						});
+					
+					  $( function() {
+						$( document ).tooltip();
+					  } );
+					  $(".otpr" ).click(function(){
+							$('.dia').dialog('open'); })
+						$('.dia').dialog({ autoOpen: false, width: 300, buttons:{
+							"ок": function(){ $( ".ok" ).dialog('open'),$('.dia').dialog('close'), 	$('#dialog1').dialog('close'), $('#dialog2').dialog('close');   }
+						}})
+						$( ".ok" ).dialog({autoOpen: false, width: 300}); 
+						})
+					
+						</script>
+				</div>
+					 </div>
+			</body>
+	</html> 
