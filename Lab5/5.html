@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+	<script src="jquery-ui.js"></script>
+	<script src="jquery.myPlugin.js"></script>
+	</head>
+	<body>
+		<div style="margin-left: 200px;">
+				<h1>Веб-технологии, ПИ-320, Фёдорова Влада, ЛР 5, Игра "Камень ножницы бумага"</h1>
+				<div style="background-color: thistle; padding: 50px;">
+					<h1>Выберите Камень, Ножницы или Бумагу!</h1>
+
+    <img src="sdF.gif" width="200px" name="rock" id = "rock"/>
+    <img src="9ZnN.gif" width="200px" name="paper" id = "paper"/>
+    <img src="LeHs.gif" width="268px" name="scissors" id = "scissors"/>
+	<div id="start" title="Начать игру">Добро пожаловать в игру "Камень ножницы бумага"! Выбирайте одну из картинок с изображением предмета и играйте против компьютера! 
+   </div>
+    <h1>Результаты битвы:</h1>
+    <script language=javascript>
+        
+	
+		$( "#start" ).dialog({width: 300, buttons:{
+        "Играть!": function() { $('#start').myPlugin('start'); $( "#start" ).dialog('close')}}});
+		
+
+
+
+    </script>
+    <table id="result" border="3" style="text-align: center; color: royalblue; font-size: large; text-transform: uppercase; padding: 5px;">
+        <tr>
+            <td>Выбор компьютера</td>
+            <td>Ваш выбор</td>
+            <td>Результат</td>
+        </tr>   
+    </table>
+			</body>
+	</html> 
